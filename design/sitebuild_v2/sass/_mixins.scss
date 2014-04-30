@@ -1,0 +1,8 @@
+
+
+@mixin font-size($size, $same-line-height: false) {
+	font-size: ($size / $base-font-size) * 1em;
+	@if $same-line-height == true {
+		line-height: ($base-font-size / $size) * 1em;
+	}
+}

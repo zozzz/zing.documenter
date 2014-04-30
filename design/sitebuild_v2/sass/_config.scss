@@ -1,0 +1,96 @@
+
+/*
+ * Colors
+ ********************************************************/
+
+/**
+ * Base color for header
+ */
+$header-base-color	: #526894 !default; // 191919
+$header-font-color	: #FFF !default;
+/**
+ * body background...
+ */
+$page-background	: #f3f3f3 !default; // 2f2f2f
+/**
+ * documentation background color
+ */
+$content-background	: #FFF !default;
+/**
+ * List of color that apply from top to down on top level navigations,
+ * if not enough colors the use first color.
+ */
+$nav-item-colors	: #5bb5e9 #25B89A #ba6be3 #e3986b #e36bac #e5da63 !default;
+/**
+ * Left side navigation background color
+ */
+$nav-background		: #FFF !default; // 565656
+/**
+ * Footer base color
+ */
+$footer-base-color	: #FFF !default;
+/**
+ * Footer text color
+ */
+$footer-text-color	: darken($footer-base-color, 20%) !default;
+
+
+/*
+ * Layout
+ ********************************************************/
+
+/**
+ * Layout width
+ */
+$layout-width		: 100% !default;
+/**
+ * Header height
+ */
+$header-height		: 60px !default;
+/**
+ * Nav width:
+ * 		- fluid: dynamically change size depend on content
+ * 		- fixed: fixed with and use `$nav-max-width`
+ */
+$nav-width			: fixed !default;
+/**
+ * Maximal width of one navigation panel
+ */
+$nav-max-width		: 250px !default;
+/**
+ * Footer height
+ */
+$footer-height		: 35px !default;
+/**
+ * Content display type:
+ * 		- page: similar to word, centered page with shadow in left and right side
+ * 		- full: fit content to area
+ */
+$content-type		: page !default;
+/**
+ * If $content-type == page then control the max width of page, else not used
+ */
+$content-max-width	: 90% !default;
+
+
+/*
+ * Fonts
+ ********************************************************/
+/**
+ * This font face used in header navigation and any other parts expect
+ * documentation
+ */
+$design-font		: "Arimo", sans-serif !default;
+/**
+ * This font used in documentation
+ */
+$readable-font		: "Arimo" !default;
+/**
+ * This font is used in source code examples
+ */
+$monospace-font		: "Arial" !default;
+/**
+ * This is the base font size, every font size in css is aligned
+ * to this size.
+ */
+$base-fontsize		: 14px !default;

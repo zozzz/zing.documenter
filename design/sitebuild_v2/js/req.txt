@@ -1,0 +1,2 @@
+jquery.slidenotes ha jobb oldalt akaorm megjeleníteni a forráskódot (responsive)
+anchorific.js anchoros menu struct sync

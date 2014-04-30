@@ -1,0 +1,27 @@
+
+#nav-sidebar {
+	nav {
+		background: $page-background;
+		border-right: 1px solid #EEE;
+	}
+
+	.top-level {
+
+	}
+
+	.second-level {
+		display: none;
+	}
+
+	a {
+		color: #b5b5b5;
+		text-decoration: none;
+		display: block;
+		padding: 5px 5px;
+
+		&:hover {
+			background: #EEE;
+			color: #333;
+		}
+	}
+}

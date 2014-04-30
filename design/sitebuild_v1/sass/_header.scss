@@ -1,0 +1,186 @@
+#header {
+	text-align: center;
+
+	.logo, .logo img {
+		height: $logo-height;
+	}
+
+	.logo {
+		position: absolute;
+		top: ($header-height - $logo-height) / 2;
+		left: ($header-height - $logo-height) / 2;
+		background: #CC3300;
+	}
+
+	.search-box {
+		display: inline-block;
+		position: relative;
+		margin: 10px auto;
+		background: #FFF;
+		@include border-radius(2px);
+		overflow: hidden;
+		@include box-shadow(0 0 4px 1px rgba(100,100,100,0.7));
+
+		.icon {
+			position: absolute;
+			display: block;
+			background: url(../img/search-icon.png);
+			width: 19px;
+			height: 19px;
+			left: 16px;
+			top: ($header-height - 20px) / 2 - 19px / 2px;
+		}
+
+		// TODO: placeholder color...
+		input {
+			color: #575757;
+			font-size: 18px;
+			height: $header-height - 20px;
+			background: transparent none;
+			border: 0 none;
+			width: 500px;
+			padding: 0;
+			float: left;
+			padding-left: 16px + 19px + 8px;
+			@include transition(all 0.4s);
+			@include box-shadow(inset 0 0 5px 1px rgba(238,238,238,1));
+
+			&:focus {
+				@include box-shadow(inset 0 0 2px 0px rgba(91,167,212,.9));
+			}
+		}
+
+		button {
+			border: 1px solid #3793CB;
+			background: #479CCF;
+			font-size: 18px;
+			line-height: $header-height - 20px - 5px;
+			height: $header-height - 20px;
+			padding: 0 40px;
+			color: #FFF;
+			cursor: pointer;
+			@include text-shadow(0 1px 0 #3188BC);
+			float: left;
+
+			&:hover {
+				background: #5BA7D4;
+				border-color: #3793CB;
+			}
+		}
+	}
+}
+
+#breadcrumb {
+	height: $breadcrumb-height + 3px;
+	text-align: left;
+	position: absolute;
+	left: $nav-width;
+	bottom: -$breadcrumb-height - 3px;
+	right: 0px;
+	background: $page-background;
+	font-size: 12px;
+
+	// diagonal = sqrt(pow(x) * 2)
+	// pow(diagonal) = pow(x) * 2
+	// pow(diagonal) / 2 = pow(x)
+	// sqrt(pow(diagonal) / 2) = x
+	$x : ceil(sqrt(pow($breadcrumb-height, 2) / 2));
+
+	a {
+		display: inline-block;
+		position: relative;
+		text-decoration: none;
+		color: #888888;
+		z-index: 5;
+		height: $breadcrumb-height;
+		line-height: $breadcrumb-height - 1px;
+	}
+
+	.line {
+		position: absolute;
+		z-index: 0;
+		top: $breadcrumb-height / 2;
+		left: 0px; right: 0px;
+		height: 1px;
+		background: #EEE;
+	}
+
+	ul {
+		height: $breadcrumb-height;
+		display: inline-block;
+		overflow: hidden;
+		@include border-radius(0 0 2px 2px);
+		border: 1px solid #EEE;
+		border-top: 0 none;
+		margin: 0 0 0 10px;
+		position: relative;
+		z-index: 1;
+	}
+
+	li {
+		display: block;
+		float: left;
+		position: relative;
+		background: #FFF;
+		padding: 0 9px 0 $x + 7px;
+		cursor: pointer;
+		@include transition(all 0.4s);
+
+		&:after {
+			position: absolute;
+			content: " ";
+			background: #FFF;
+			height: $x;
+			width: $x;
+			@include transform(rotate(-45deg));
+			background: #FFF;
+			top: ($x / 4) - 1;
+			right: -($x / 2);
+			z-index: 2;
+			border-bottom: 1px solid #EEE;
+			border-right: 1px solid #EEE;
+			@include transition(all 0.4s);
+		}
+
+		&:first-child {
+			padding-left: 14px;
+		}
+
+		// active item
+		&:last-child {
+			background: #3498db !important;
+			cursor: default;
+			padding-right: 14px;
+
+			a {
+				color: #f7fcff;
+				font-weight: bold;
+				@include text-shadow(0px 0px 3px #ffffff);
+			}
+
+			&:after {
+				background: #3498db !important;
+				display: none;
+			}
+		}
+
+		&.active {
+			background: #479ccf;
+			&:after {
+				background: #479ccf;
+			}
+		}
+
+		&:hover {
+			background: #f4f4f4;
+
+			&:after {
+				background: #f4f4f4;
+			}
+		}
+	}
+
+
+}
+
+

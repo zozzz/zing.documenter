@@ -1,0 +1,73 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	font-size: $base-font-size;
+	line-height: 1.5em;
+	background: $page-background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWN4+fLlfwaiAE6VAEu7B3W7SJyVAAAAAElFTkSuQmCC");
+	font-family: $design-font;
+}
+
+#header {
+	position: absolute;
+	background: $header-base-color;
+	height: $header-height;
+	//border-bottom: 1px solid lighten($header-base-color, 20%);
+	z-index: 50;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	@include box-shadow(0 0 3px 0 rgba(0,0,0,.75));
+}
+
+#cwrapper {
+	position: absolute;
+	top: $header-height;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow: auto;
+}
+
+#nav-sidebar {
+	z-index: 40;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	padding-top: $header-height;
+
+	nav {
+		height: 100%;
+
+		@include box-shadow(0 0 2px 0 rgba(0,0,0,.75));
+
+		@if $nav-width == fluid {
+			max-width: $nav-max-width;
+		} @else {
+			width: $nav-max-width;
+		}
+	}
+}
+
+#content {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	padding: 20px 0;
+
+	@if $nav-width == fixed {
+		left: $nav-max-width;
+	}
+
+
+}
+
+#footer {
+	height: $footer-height;
+	background: $footer-base-color;
+	border-top: 1px solid darken($footer-base-color, 10%);
+	position: absolute;
+	bottom: 0px;
+	left: 20px;
+	right: 20px;
+}
